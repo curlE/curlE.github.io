@@ -553,28 +553,34 @@
                 <span class="links-of-author-item">
                   
                   
+                    
+                  
                   
                     
                   
-                  <a href="https://github.com/curlE" title="GitHub &rarr; https://github.com/curlE" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                  <a href="mailto:yangqi5213@gmail.com" title="E-Mail &rarr; mailto:yangqi5213@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
                   
                   
+                    
+                  
                   
                     
                   
-                  <a href="mailto:yangqi5213@gmail.com" title="E-Mail &rarr; mailto:yangqi5213@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+                  <a href="https://github.com/curlE" title="GitHub &rarr; https://github.com/curlE" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
                   
                   
+                    
+                  
                   
                     
                   
-                  <a href="https://weibo.com/yourname" title="Weibo &rarr; https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                  <a href="https://weibo.com/yourname" title="Weibo &rarr; https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
                 </span>
               
             </div>
@@ -776,41 +782,6 @@
   
 
   
-<script>
-  $('.highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-        if (result) $(this).text('Copied');
-        else $(this).text('Copy failed');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('Copy');
-      }, 300);
-    }).append(e);
-  })
-</script>
-
 
   
 
