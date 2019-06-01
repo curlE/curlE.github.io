@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="在参考文献[1]中给出了矢量型基函数下波动方程不连续伽辽金时域方法的$m$主方程，但没有给全同时包含所有边界条件的迭代方程，作者推导了同时包含ABC/PEC/PMC/TFSF边界的公式：  [1].C.Y. Tian, Y. Shi, and C. H. Chan, “Interior Penalty Discontinuous Galerkin Time Domain Method Based">
+  <meta name="description" content="在参考文献[1]中给出了矢量型基函数下波动方程不连续伽辽金时域方法的主方程，但没有给全同时包含所有边界条件的迭代方程，作者推导了同时包含ABC/PEC/PMC/TFSF边界的公式：  [1].C.Y. Tian, Y. Shi, and C. H. Chan, “Interior Penalty Discontinuous Galerkin Time Domain Method Based on">
 <meta name="keywords" content="波动方程,间断伽辽金方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="矢量型基函数下波动方程不连续伽辽金公式的补充">
 <meta property="og:url" content="http://yoursite.com/2019/06/01/矢量型基函数下波动方程不连续伽辽金公式的补充/index.html">
 <meta property="og:site_name" content="Saman">
-<meta property="og:description" content="在参考文献[1]中给出了矢量型基函数下波动方程不连续伽辽金时域方法的$m$主方程，但没有给全同时包含所有边界条件的迭代方程，作者推导了同时包含ABC/PEC/PMC/TFSF边界的公式：  [1].C.Y. Tian, Y. Shi, and C. H. Chan, “Interior Penalty Discontinuous Galerkin Time Domain Method Based">
+<meta property="og:description" content="在参考文献[1]中给出了矢量型基函数下波动方程不连续伽辽金时域方法的主方程，但没有给全同时包含所有边界条件的迭代方程，作者推导了同时包含ABC/PEC/PMC/TFSF边界的公式：  [1].C.Y. Tian, Y. Shi, and C. H. Chan, “Interior Penalty Discontinuous Galerkin Time Domain Method Based on">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-01T05:02:10.460Z">
+<meta property="og:updated_time" content="2019-06-01T05:07:44.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="矢量型基函数下波动方程不连续伽辽金公式的补充">
-<meta name="twitter:description" content="在参考文献[1]中给出了矢量型基函数下波动方程不连续伽辽金时域方法的$m$主方程，但没有给全同时包含所有边界条件的迭代方程，作者推导了同时包含ABC/PEC/PMC/TFSF边界的公式：  [1].C.Y. Tian, Y. Shi, and C. H. Chan, “Interior Penalty Discontinuous Galerkin Time Domain Method Based">
+<meta name="twitter:description" content="在参考文献[1]中给出了矢量型基函数下波动方程不连续伽辽金时域方法的主方程，但没有给全同时包含所有边界条件的迭代方程，作者推导了同时包含ABC/PEC/PMC/TFSF边界的公式：  [1].C.Y. Tian, Y. Shi, and C. H. Chan, “Interior Penalty Discontinuous Galerkin Time Domain Method Based on">
 
 
 
@@ -367,7 +367,7 @@
                 
               
 
-              <time title="Created: 2019-06-01 11:36:03 / Modified: 13:02:10" itemprop="dateCreated datePublished" datetime="2019-06-01T11:36:03+08:00">2019-06-01</time>
+              <time title="Created: 2019-06-01 11:36:03 / Modified: 13:07:44" itemprop="dateCreated datePublished" datetime="2019-06-01T11:36:03+08:00">2019-06-01</time>
             
 
             
@@ -424,23 +424,29 @@
       
 
       
-        <p>在参考文献[1]中给出了矢量型基函数下波动方程不连续伽辽金时域方法的$m$主方程，但没有给全同时包含所有边界条件的迭代方程，作者推导了同时包含ABC/PEC/PMC/TFSF边界的公式：</p>
+        <p>在参考文献[1]中给出了矢量型基函数下波动方程不连续伽辽金时域方法的主方程，但没有给全同时包含所有边界条件的迭代方程，作者推导了同时包含ABC/PEC/PMC/TFSF边界的公式：</p>
 <blockquote>
 <p>[1].C.Y. Tian, Y. Shi, and C. H. Chan, “Interior Penalty Discontinuous Galerkin Time Domain Method Based on Wave Equation for 3D Electromagnetic Modeling,”IEEE Transactions on Antennas and Propagation, no. 65, vol. 12, pp. 71747184, 2017.</p>
 </blockquote>
 <a id="more"></a>
 <script type="math/tex; mode=display">
-\int_{\Omega _k}{\varepsilon \frac{\partial ^2\boldsymbol{E}}{\partial t^2}\cdot \boldsymbol{\varPhi }_id\boldsymbol{x}}+\frac{1}{\mu}\int_{\Omega _k}{\nabla \times \boldsymbol{E}\cdot \nabla \times \boldsymbol{\varPhi }_id\boldsymbol{x}}+\int_{\Gamma _{ABC}}{Y_s\hat{n}\times \frac{\partial \boldsymbol{E}}{\partial t}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
+\int_{\Omega _k}{\varepsilon \frac{\partial ^2\boldsymbol{E}}{\partial t^2}\cdot \boldsymbol{\varPhi }_id\boldsymbol{x}}+\frac{1}{\mu}\int_{\Omega _k}{\nabla \times \boldsymbol{E}\cdot \nabla \times \boldsymbol{\varPhi }_id\boldsymbol{x}}
 \\
--\frac{1}{2\mu}\int_{\Gamma _i}{\hat{n}^+\times \boldsymbol{E}^+\cdot \nabla \times \boldsymbol{\varPhi }_idS}-\frac{1}{2\mu}\int_{\Gamma _i}{\hat{n}\times \boldsymbol{E}\cdot \nabla \times \boldsymbol{\varPhi }_idS}-\frac{1}{2\mu}\int_{\Gamma _i}{\nabla \times \boldsymbol{E}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
+-\frac{1}{2\mu}\int_{\Gamma _i}{\hat{n}^+\times \boldsymbol{E}^+\cdot \nabla \times \boldsymbol{\varPhi }_idS}-\frac{1}{2\mu}\int_{\Gamma _i}{\hat{n}\times \boldsymbol{E}\cdot \nabla \times \boldsymbol{\varPhi }_idS}
 \\
--\frac{1}{2\mu ^+}\int_{\Gamma _i}{\nabla \times \boldsymbol{E}^+\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}+\tau _f\int_{\Gamma _i}{\hat{n}\times \boldsymbol{E}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}+\tau _f\int_{\Gamma _i}{\hat{n}^+\times \boldsymbol{E}^+\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
+-\frac{1}{2\mu}\int_{\Gamma _i}{\nabla \times \boldsymbol{E}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}-\frac{1}{2\mu ^+}\int_{\Gamma _i}{\nabla \times \boldsymbol{E}^+\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
 \\
--\int_{\Gamma _{PEC}}{\hat{n}\times \boldsymbol{E}\cdot \nabla \times \boldsymbol{\varPhi }_idS}-\frac{1}{\mu}\int_{\Gamma _{PEC}}{\nabla \times \boldsymbol{E}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}+\tau _f\int_{\Gamma _{PEC}}{\hat{n}\times \boldsymbol{E}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
++\tau _f\int_{\Gamma _i}{\hat{n}\times \boldsymbol{E}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}+\tau _f\int_{\Gamma _i}{\hat{n}^+\times \boldsymbol{E}^+\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
 \\
--\frac{1}{2\mu}\int_{\Gamma _{TF}}{\hat{n}\times \boldsymbol{E}^{inc}\cdot \nabla \times \boldsymbol{\varPhi }_idS}-\frac{1}{2}\int_{\Gamma _{TF}}{\left( -\frac{\partial \boldsymbol{H}^{inc}}{\partial t} \right) \cdot \hat{n}\times \boldsymbol{\varPhi }_idS}+\tau _f\int_{\Gamma _{TF}}{\hat{n}\times \boldsymbol{E}^{inc}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
+-\int_{\Gamma _{PEC}}{\hat{n}\times \boldsymbol{E}\cdot \nabla \times \boldsymbol{\varPhi }_idS}-\frac{1}{\mu}\int_{\Gamma _{PEC}}{\nabla \times \boldsymbol{E}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
 \\
-+\frac{1}{2\mu}\int_{\Gamma _{SF}}{\hat{n}\times \boldsymbol{E}^{inc}\cdot \nabla \times \boldsymbol{\varPhi }_idS}+\frac{1}{2}\int_{\Gamma _{SF}}{\left( -\frac{\partial \boldsymbol{H}^{inc}}{\partial t} \right) \cdot \hat{n}\times \boldsymbol{\varPhi }_idS}-\tau _f\int_{\Gamma _{SF}}{\hat{n}\times \boldsymbol{E}^{inc}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}=0</script><p>说明：</p>
++\tau _f\int_{\Gamma _{PEC}}{\hat{n}\times \boldsymbol{E}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}+\int_{\Gamma _{ABC}}{Y_s\hat{n}\times \frac{\partial \boldsymbol{E}}{\partial t}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
+\\
+-\frac{1}{2\mu}\int_{\Gamma _{TF}}{\hat{n}\times \boldsymbol{E}^{inc}\cdot \nabla \times \boldsymbol{\varPhi }_idS}-\frac{1}{2}\int_{\Gamma _{TF}}{\left( -\frac{\partial \boldsymbol{H}^{inc}}{\partial t} \right) \cdot \hat{n}\times \boldsymbol{\varPhi }_idS}
+\\
++\tau _f\int_{\Gamma _{TF}}{\hat{n}\times \boldsymbol{E}^{inc}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}+\frac{1}{2\mu}\int_{\Gamma _{SF}}{\hat{n}\times \boldsymbol{E}^{inc}\cdot \nabla \times \boldsymbol{\varPhi }_idS}
+\\
++\frac{1}{2}\int_{\Gamma _{SF}}{\left( -\frac{\partial \boldsymbol{H}^{inc}}{\partial t} \right) \cdot \hat{n}\times \boldsymbol{\varPhi }_idS}-\tau _f\int_{\Gamma _{SF}}{\hat{n}\times \boldsymbol{E}^{inc}\cdot \hat{n}\times \boldsymbol{\varPhi }_idS}=0</script><p>说明：</p>
 <p>如果边界为PEC，内边界积分项全部为0，只保留PEC边界的积分项。<br>如果边界为PMC，内边界和其它边界(PEC/ABC/TFSF)面积分项全部为0。<br>如果边界为ABC，内边界和其它边界积分项为0，只保留ABC边界积分项。<br>如果为TF边界，内边界和TF边界积分项保留，其他边界积分为0。<br>如果为SF边界，内边界和SF边界积分项保留，其他边界积分为0。</p>
 
       
