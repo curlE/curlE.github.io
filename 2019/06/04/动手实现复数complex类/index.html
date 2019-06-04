@@ -96,16 +96,18 @@
 
 
 
-  <meta name="description" content="世界以痛吻我 要我报之以歌">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Saman">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前言最近在学习侯捷老师的《C++面向对象开发》的课程，里面讲了很多规范化编程的知识，本文从实现一个复数类对象出发，来说明写程序中需要注意的一些问题。本文主要参考了这篇博客的内容。 整体代码complex.h12345678910111213141516171819#ifndef __COMPLEX__#define __COMPLEX__ class complex&amp;#123;    public">
+<meta name="keywords" content="C++,class">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动手实现复数complex类">
+<meta property="og:url" content="http://yoursite.com/2019/06/04/动手实现复数complex类/index.html">
 <meta property="og:site_name" content="Saman">
-<meta property="og:description" content="世界以痛吻我 要我报之以歌">
+<meta property="og:description" content="前言最近在学习侯捷老师的《C++面向对象开发》的课程，里面讲了很多规范化编程的知识，本文从实现一个复数类对象出发，来说明写程序中需要注意的一些问题。本文主要参考了这篇博客的内容。 整体代码complex.h12345678910111213141516171819#ifndef __COMPLEX__#define __COMPLEX__ class complex&amp;#123;    public">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-04T09:07:53.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Saman">
-<meta name="twitter:description" content="世界以痛吻我 要我报之以歌">
+<meta name="twitter:title" content="动手实现复数complex类">
+<meta name="twitter:description" content="前言最近在学习侯捷老师的《C++面向对象开发》的课程，里面讲了很多规范化编程的知识，本文从实现一个复数类对象出发，来说明写程序中需要注意的一些问题。本文主要参考了这篇博客的内容。 整体代码complex.h12345678910111213141516171819#ifndef __COMPLEX__#define __COMPLEX__ class complex&amp;#123;    public">
 
 
 
@@ -113,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/04/动手实现复数complex类/">
 
 
 
@@ -123,7 +125,7 @@
   };
 </script>
 
-  <title>Saman</title>
+  <title>动手实现复数complex类 | Saman</title>
   
 
 
@@ -171,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -210,7 +211,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -306,9 +307,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -340,10 +341,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/04/动手实现复数complex类/" class="post-title-link" itemprop="url">动手实现复数complex类</a>
+          <h1 class="post-title" itemprop="name headline">动手实现复数complex类
+
               
             
           </h1>
@@ -425,9 +424,7 @@
       
 
       
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在学习侯捷老师的《C++面向对象开发》的课程，里面讲了很多规范化编程的知识，本文从实现一个复数类对象出发，来说明写程序中需要注意的一些问题。本文主要参考了<a href="https://blog.csdn.net/qq_40950957/article/details/80466258" target="_blank" rel="noopener">这篇博客</a>的内容。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在学习侯捷老师的《C++面向对象开发》的课程，里面讲了很多规范化编程的知识，本文从实现一个复数类对象出发，来说明写程序中需要注意的一些问题。本文主要参考了<a href="https://blog.csdn.net/qq_40950957/article/details/80466258" target="_blank" rel="noopener">这篇博客</a>的内容。</p>
 <h2 id="整体代码"><a href="#整体代码" class="headerlink" title="整体代码"></a>整体代码</h2><h3 id="complex-h"><a href="#complex-h" class="headerlink" title="complex.h"></a>complex.h</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#ifndef __COMPLEX__</span><br><span class="line">#define __COMPLEX__</span><br><span class="line"> </span><br><span class="line">class complex</span><br><span class="line">&#123;</span><br><span class="line">    public:</span><br><span class="line">        complex(double r = 0, double i = 0)</span><br><span class="line">            : re (r), im (i)</span><br><span class="line">        &#123; &#125;</span><br><span class="line">        complex&amp; operator += (const complex&amp;);</span><br><span class="line">        double real () const &#123; return re; &#125;</span><br><span class="line">        double imag () const &#123; return im; &#125;</span><br><span class="line">    private:</span><br><span class="line">        double re, im;</span><br><span class="line"> </span><br><span class="line">        friend complex&amp; __doapl (complex*, const complex&amp;);</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 <h3 id="complex-cpp"><a href="#complex-cpp" class="headerlink" title="complex.cpp"></a>complex.cpp</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;complex.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"> </span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">inline complex&amp; __doapl(complex* ths, const complex&amp; r)</span><br><span class="line">&#123;</span><br><span class="line">    ths-&gt;re += r.re;</span><br><span class="line">    ths-&gt;im += r.im;</span><br><span class="line">    return *ths;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">inline complex&amp; complex::operator += (const complex&amp; r)</span><br><span class="line">&#123;</span><br><span class="line">    return __doapl (this, r);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">inline double imag (const complex&amp; x)</span><br><span class="line">&#123;</span><br><span class="line">  return x.imag ();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">inline double real (const complex&amp; x)</span><br><span class="line">&#123;</span><br><span class="line">  return x.real ();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">inline complex operator + (const complex&amp; x, const complex&amp; y)</span><br><span class="line">&#123;</span><br><span class="line">    return complex (real (x) + real (y), imag (x) + imag (y));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">inline complex operator + (const complex&amp; x, double y)</span><br><span class="line">&#123;</span><br><span class="line">    return complex (real (x) + y, imag (x));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">inline complex operator + (double x, const complex&amp; y)</span><br><span class="line">&#123;</span><br><span class="line">    return complex (x + real (y), imag (y));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">ostream&amp; operator &lt;&lt; (ostream&amp; os, const complex&amp; x)</span><br><span class="line">&#123;</span><br><span class="line">    return os &lt;&lt; &apos; (&apos; &lt;&lt; real (x) &lt;&lt; &quot;,&quot; &lt;&lt; imag (x) &lt;&lt; &apos;)&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="一、complex-h部分"><a href="#一、complex-h部分" class="headerlink" title="一、complex.h部分"></a>一、complex.h部分</h3><h4 id="1-1-初始化列表-initialization-list"><a href="#1-1-初始化列表-initialization-list" class="headerlink" title="1.1 初始化列表(initialization list)"></a>1.1 初始化列表(initialization list)</h4><blockquote>
@@ -459,8 +456,6 @@
 <p>这里函数的返回值不能返回reference，这其实是使用临时对象，在函数体内定义变量，然后把这个变量的引用传递出去，函数结束后变量本体死亡，传出去的引用既没有意义了。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在开始写程序之前，要先思考好类的规范化写法，如何才能让代码的效率最高。</p>
 
-          
-        
       
     </div>
 
@@ -481,353 +476,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/01/矢量型基函数下波动方程不连续伽辽金公式的补充/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qi Yang">
-      <meta itemprop="description" content="世界以痛吻我 要我报之以歌">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saman">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/01/矢量型基函数下波动方程不连续伽辽金公式的补充/" class="post-title-link" itemprop="url">矢量型基函数下波动方程不连续伽辽金公式的补充</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-06-01 11:36:03 / Modified: 13:07:44" itemprop="dateCreated datePublished" datetime="2019-06-01T11:36:03+08:00">2019-06-01</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/科研/" itemprop="url" rel="index"><span itemprop="name">科研</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
           
-
+            <a href="/tags/class/" rel="tag"><i class="fa fa-tag"></i> class</a>
           
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>在参考文献[1]中给出了矢量型基函数下波动方程不连续伽辽金时域方法的主方程，但没有给全同时包含所有边界条件的迭代方程，作者推导了同时包含ABC/PEC/PMC/TFSF边界的公式：</p>
-<blockquote>
-<p>[1].C.Y. Tian, Y. Shi, and C. H. Chan, “Interior Penalty Discontinuous Galerkin Time Domain Method Based on Wave Equation for 3D Electromagnetic Modeling,”IEEE Transactions on Antennas and Propagation, no. 65, vol. 12, pp. 71747184, 2017.</p>
-</blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/01/矢量型基函数下波动方程不连续伽辽金公式的补充/#more" rel="contents">
-                Read more &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/01/矢量型基函数下波动方程不连续伽辽金公式的补充/" rel="next" title="矢量型基函数下波动方程不连续伽辽金公式的补充">
+                <i class="fa fa-chevron-left"></i> 矢量型基函数下波动方程不连续伽辽金公式的补充
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/01/sodagreen-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qi Yang">
-      <meta itemprop="description" content="世界以痛吻我 要我报之以歌">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saman">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/01/sodagreen-1/" class="post-title-link" itemprop="url">Sodazine#1 夏天该不该去旅行</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-01 16:11:37 / Modified: 16:50:11" itemprop="dateCreated datePublished" datetime="2019-05-01T16:11:37+08:00">2019-05-01</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <blockquote>
-<p>指南针也有失效的时候，地图也帮不上忙，瞎混着不知道去哪里，只有音乐才是唯一的方向。<br>这个夏天，没有比听苏打绿更重要的事。好像只是这样一直保持听着、听着、听着的状态…夏天就过去了。</p>
-</blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/05/01/sodagreen-1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -837,14 +517,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -864,8 +545,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1010,6 +700,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整体代码"><span class="nav-number">2.</span> <span class="nav-text">整体代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#complex-h"><span class="nav-number">2.1.</span> <span class="nav-text">complex.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#complex-cpp"><span class="nav-number">2.2.</span> <span class="nav-text">complex.cpp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码解析"><span class="nav-number">3.</span> <span class="nav-text">代码解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、complex-h部分"><span class="nav-number">3.1.</span> <span class="nav-text">一、complex.h部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-初始化列表-initialization-list"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.1 初始化列表(initialization list)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-参数及返回值传递的方式"><span class="nav-number">3.1.2.</span> <span class="nav-text">1.2 参数及返回值传递的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-友元函数"><span class="nav-number">3.1.3.</span> <span class="nav-text">1.3 友元函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、complex-cpp部分"><span class="nav-number">3.2.</span> <span class="nav-text">二、complex.cpp部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-友元函数及内联函数"><span class="nav-number">3.2.1.</span> <span class="nav-text">2.1 友元函数及内联函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-隐藏的this"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.2 隐藏的this</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-不能为reference的返回值"><span class="nav-number">3.2.3.</span> <span class="nav-text">2.3 不能为reference的返回值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -1140,6 +847,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -1156,6 +867,8 @@
   
 
 
+  
+
 
   
 
@@ -1171,57 +884,7 @@
 
   
   
-    
-      
-    
-      
-        
-      
-    
-      
-    
-  
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
